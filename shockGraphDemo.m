@@ -6,8 +6,10 @@
 
 clear all, close all; 
 
+in=input('Input name of image: ','s');
+
 %Read in the image
-I=imread('Cat054.gif'); 
+I=imread(in); 
  
 %Change the type of I into double for computation 
 I=double(I); 
@@ -99,13 +101,13 @@ for i=1:M
 end 
 
 %Display image with shock graph overlay
-figure(4); 
+figure(); 
 imshow(uint8(result)); 
 
 %Construct shockgraph using MATLAB's bwmorph command
 skeletalResult=bwmorph(result,'skel');
 
 %Display MATLAB's resulting shockgraph
-figure(5); 
+figure(); 
 imshow(skeletalResult); 
     
